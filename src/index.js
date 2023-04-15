@@ -32,4 +32,24 @@
 // console.log(sum(2, 3));
 
 
-import './styles/style.css'
+import './styles/style.css';
+import {base, list, frameworks, libs} from "./data/hbsData.js";
+import hbs from "./template/secondtask.hbs";
+import thirdTask from "./template/thirdtask.hbs";
+import userForm from "./template/firsttask.hbs";
+import libsll from "./template/forthtask.hbs";
+
+
+const root = document.querySelector("#root");
+const user = userForm(base);
+const markUp = hbs(list);
+const libsList = libsll(libs);
+
+
+root.insertAdjacentHTML('beforeend', user);
+root.insertAdjacentHTML('beforeend', markUp);
+const frameworksList = thirdTask(frameworks);
+root.insertAdjacentHTML('beforeend', frameworksList);
+root.insertAdjacentHTML('beforeend', libsList);
+
+
